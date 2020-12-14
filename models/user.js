@@ -10,7 +10,8 @@ const userSchema = new Schema(
     student: {type: Boolean, required: true},
     hours: Number,
     licensesRatings: [String],
-    scheduledFlight: [scheduledFlightSchema]
+    scheduledFlight: [{type: Schema.Types.ObjectId,
+      ref: 'Schedule'}]
   },
   {
     timestamps: true,

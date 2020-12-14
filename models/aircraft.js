@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const aircraftSchema = new Schema(
   {
     name: {type: String, required: true},
-    schedule: [scheduledFlightSchema],
+    schedule: [{type: Schema.Types.ObjectId,
+        ref: 'Schedule'}],
     multiEngine: Boolean
   },
   {
@@ -12,4 +13,4 @@ const aircraftSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("User", aircraftSchema);resizeBy
+module.exports = mongoose.model("Aircraft", aircraftSchema);
