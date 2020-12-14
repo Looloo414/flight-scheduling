@@ -12,4 +12,4 @@ const aircraftSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", aircraftSchema);resizeBy
