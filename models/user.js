@@ -7,7 +7,6 @@ const userSchema = new Schema(
     email: String,
     avatar: String,
     googleId: String,
-    student: {type: Boolean, required: true},
     hours: Number,
     licensesRatings: [String],
     scheduledFlight: [{type: Schema.Types.ObjectId,
