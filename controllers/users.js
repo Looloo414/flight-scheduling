@@ -3,7 +3,7 @@ const User = require('../models/user');
 
 module.exports = {
     index,
-    showProfile,
+    showProfile
 
 }
 function index(req, res) {
@@ -16,4 +16,6 @@ function showProfile(req, res) {
     User.findById(req.user._id)
     res.render("users/profile", { title: "Profile Page", user })
 }
+
+
 
