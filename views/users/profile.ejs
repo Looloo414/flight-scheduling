@@ -1,4 +1,22 @@
 <%- include('../partials/header') %>
+<h3><%= title %></h3>
 
+<div>
+    <a href="/users/<%= user._id %>/edit">Update
+        Info</a>
+</div>
+
+<div class="card-body">
+    <h5 class="card-title">Name: <%= user.name %></h5>
+    <p class="card-text">Email: <%= user.email %></p>
+    <p class="card-text">Hours: <%= user.hours %></p>
+    <p>Student/Instructor ?: <%= user.student %></p>
+    <p class="card-text">Licenses/Ratings: 
+        <% user.licensesRatings.forEach((licenseRatings) => { %>
+            <p><%= licenseRatings%></p>
+       <% }) %> 
+
+</div>
+</div>
 
 <%- include('../partials/footer') %>

@@ -1,10 +1,11 @@
-const Schedule = require('../models/schedule');
+// const Schedule = require('../models/schedule');
 const User = require('../models/user');
 
 module.exports = {
     index,
     showProfile,
     show,
+    edit,
     update
 
 }
@@ -16,30 +17,37 @@ function index(req, res) {
 
 function showProfile(req, res) {
     User.findById(req.user._id)
-    res.render("users/profile", { title: "Profile Page", user })
+        .then((user) => {
+            res.render("users/profile", { title: "Profile Page", user })
+        })
+}
+
+function edit(req, res) {
+    console.log("hello")
+    User.findById(req.user._id)
+        .then((user) => {
+            res.render("users/edit", { title: "Update User", user })
+        })
 }
 
 function update(req, res) {
-    User.findByIdAndUpdate(req.user._id, req.body, {new: true})
-    .then(() => {
-      res.redirect("/users/profile")
+    req.user.licensesRatings.push(req.body.licensesRatings)
+    req.user.hours = req.body.hours
+    req.user.save(() => {
+        res.redirect("/users/profile")
     })
-  }
-  
-  function show(req, res) {
+}
+
+function show(req, res) {
     User.findById(req.params.id)
-    .then((userInfo) => {
-      Schedule.find({ added: userInfo._id })
-      .then((schedules) => {
-        res.render("users/show", {
-          title: "User Details",
-          userInfo,
-          user: req.user,
-          schedules
+        .then((userInfo) => {
+            res.render("users/show", {
+                title: "User Details",
+                userInfo,
+                user: req.user,
+            })
         })
-      })
-    })
-  }
+}
 
 
 

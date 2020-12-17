@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 const aircraftSchema = new Schema(
   {
     name: {type: String, required: true},
-    schedule: [{type: Schema.Types.ObjectId,
-        ref: 'Schedule'}],
+    avatar: String,
     multiEngine: Boolean
   },
   {

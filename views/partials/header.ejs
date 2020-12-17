@@ -22,25 +22,22 @@
           <a class="nav-link" href="/aircrafts">Aircrafts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/users/profile">Instructors</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/profile">Students</a>
+          <a class="nav-link" href="/users">Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/schedules">Scheduled Flights</a>
         </li>
-    <ul>
-      <li>
-        <a href="/auth/logout">Log Out</a>
-      <li class="nav-item">
-        <img id="avatarPhoto" height="50" src="<%= user.avatar %>" alt="" />
-      </li>
-      </li>
-      <% } else { %>
-      <li>
-        <a href="/auth/google">Login with Google</a>
-      </li>
-      <% } %>
-    </ul>
+        <ul>
+          <li>
+            <a href="/auth/logout">Log Out</a>
+          <li class="nav-item">
+            <img id="avatarPhoto" height="50" src="<%= user.avatar %>" alt="" />
+          </li>
+          </li>
+          <% } else { %>
+          <li>
+            <a href="/auth/google">Login with Google</a>
+          </li>
+          <% } %>
+        </ul>
   </nav>

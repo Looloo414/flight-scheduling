@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+<h2>Edit Info</h2>
+
+<form action="/users/<%= user._id%>?_method=PUT" method="POST">
+    <input type="text" name="licensesRatings" placeholder="Add Licence">
+    <input type="number" name="hours" placeholder="Add Hours">
+    <button type="submit">Update</button>
+</form>
+
+
+
+<%- include('../partials/footer') %>
