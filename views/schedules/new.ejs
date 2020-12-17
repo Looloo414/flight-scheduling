@@ -1,4 +1,31 @@
 <%- include('../partials/header') %>
-
+<form id="new-form" action="/schedules" method="POST">
+    <label>Date:</label>
+    <input type="datetime-local" name="date" />
+</br>
+    <select name="user">
+        <% users.forEach(function(u) { %>
+        <option><%= u.user %></option>
+        <% }) %>
+    </select>
+</form>
+</br>
+<form id="add-user-form" action="/users" method="POST">
+    <label>User:</label>
+    <input type="" name="user">
+</form>
+</br>
+<select name="aircraft">
+    <% aircrafts.forEach(function(a) { %>
+    <option><%= a.aircraft %></option>
+    <% }) %>
+</select>
+</p>
+<form id="add-aircraft-form" action="/aircrafts" method="POST">
+    <label>Aircraft:</label>
+    <input type="text" name="aircraft">
+    <input type="submit" value="Add Schedule">
+</form>
+</form>
 
 <%- include('../partials/footer') %>

@@ -1,4 +1,17 @@
 <%- include('../partials/header') %>
-
+<h3>Schedules</h3>
+<% schedules.forEach((s) => { %>
+<tr>
+    <td><%= s.date %> </td>
+    <td><a href="/users/<%= user._id %>" class="btn btn-primary">Student/Instructor</a></td>
+    <td><a href="/aircrafts/<%= aircrafts._id %>" class="btn btn-primary">Aircraft</a></td>
+    <td><a href="/schedules/<%= s._id %>">Details</a></td>
+    <td>
+        <form action="schedules<%= s._id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+        </form>
+    </td>
+</tr>
+<% }) %>
 
 <%- include('../partials/footer') %>
