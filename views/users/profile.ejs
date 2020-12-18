@@ -10,7 +10,6 @@
     <h5 class="card-title">Name: <%= user.name %></h5>
     <p class="card-text">Email: <%= user.email %></p>
     <p class="card-text">Hours: <%= user.hours %></p>
-    <p>Student/Instructor ?: <%= user.student %></p>
     <p class="card-text">Licenses/Ratings: 
         <% user.licensesRatings.forEach((licenseRatings) => { %>
             <p><%= licenseRatings%></p>

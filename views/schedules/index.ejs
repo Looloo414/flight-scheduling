@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedules</title>
+</head>
+
+<body>
+    <H3>Schedules</H3>
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Date:</th>
+                <th>Instructor:</th>
+                <th>Student:</th>
+                <th>Aircraft</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% schedules.forEach((s) => { %>
+            <tr>
+                <td><%= s.date %> </td>
+                <td><%= s.instructor %> </td>
+                <td><%= s.user %> </td>
+                <td><%= s.aircraft %> </td>
+                <td><a href="/schedules/<%= s._id %>">Details</a></td>
+                <td>
+                    <form action="schedules/<%= s._id %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    </br>
+    </br>
+    <a href="/schedules/new">New Schedule</a>
+
+</body>
+
+</html>

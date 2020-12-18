@@ -8,7 +8,6 @@ const userSchema = new Schema(
     avatar: String,
     googleId: String,
     hours: Number,
-    student: {type: Boolean, default: true},
     licensesRatings: [String],
     // scheduledFlight: [{type: Schema.Types.ObjectId,
     //   ref: 'Schedule'}]
