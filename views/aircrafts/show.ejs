@@ -12,24 +12,22 @@
     </br>
     <section>
         <img height="75" src="<%= aircraft.avatar ? aircraft.avatar : 'http://theoldreader.com/kittens/300/300/' %>">
-        <form action="/aircrafts/<%= aircraft._id%>?
-            _method=PUT" method="POST" >
 
         <div>Name of Aircraft:</div>
         <div><%= aircraft.name %></div>
         </br>
         <div>Multi Engine ?:</div>
         <div><%= aircraft.multiEngine %></div>
-    </br>
-        <Label>Edit Name of Aircraft:</Label>
-        <input type="text" name="name" value="<%= aircraft.name  %> ">
-        <label>multiEngine ?:</label>
-        <input type="checkbox" name='multiEngine' <%= aircraft.multiEngine === "on"? 'Multi Engine' : 'Single Engine' %>>
-        <button type='submit'>Update</button>
-    </form>
+        <form action="/aircrafts/<%= aircraft._id%>?_method=PUT" method="POST">
+            </br>
+            <Label>Edit Name of Aircraft:</Label>
+            <input type="text" name="name" value="<%= aircraft.name  %> ">
+            <label>Multi Engine ?:</label>
+            <input type="checkbox" name='multiEngine'
+                <%= aircraft.multiEngine === "on"? 'Multi Engine' : 'Single Engine' %>>
+            <button type='submit'>Update</button>
+        </form>
     </section>
-    
-    </form>
     </br>
     <a href="schedules/new" role="button">Schedule this Plane</a>
 </body>

@@ -5,6 +5,7 @@ const aircraftsCtrl = require('../controllers/aircrafts')
 router.get('/new', aircraftsCtrl.new);
 router.post('/', aircraftsCtrl.create);
 router.get('/', aircraftsCtrl.index);
+router.put("/:id", aircraftsCtrl.update)
 router.delete('/:id', aircraftsCtrl.delete)
 router.get('/:id', aircraftsCtrl.show)
 
