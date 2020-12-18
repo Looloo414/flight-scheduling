@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>New Schedule</h1>
     <form id="new-form" action="/schedules" method="POST">
         <label>Instructor:</label>
         <select name="instructor">
-          <option value="Alexa">Alexa</option>
-          <option value="Chris">Chris</option>
-          <option value="Steve">Steve</option>
-          <option value="Brian">Brian</option>
+            <option value="Alexa">Alexa</option>
+            <option value="Chris">Chris</option>
+            <option value="Steve">Steve</option>
+            <option value="Brian">Brian</option>
         </select>
-    </br>
-    <label>Flight Time</label>
-    <input type="datetime-local" name="date"/>
-    <input type="submit" value="Add Schedule">
-  </form>
+        </br>
+        <label>Flight Time</label>
+        <input type="datetime-local" name="date" />
+
+
+        <input type="submit" value="Add Schedule">
+    </form>
 </body>
+
 </html>

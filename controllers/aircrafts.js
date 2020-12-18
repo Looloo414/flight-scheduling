@@ -3,6 +3,7 @@ const Aircraft = require('../models/aircraft');
 
 module.exports = {
     new: newAircraft,
+    addToAircrafts,
     create,
     index,
     delete: deleteAircraft,
@@ -10,8 +11,19 @@ module.exports = {
     update
 }
 function newAircraft(req, res) {
-    res.render('aircrafts/index', { title: 'Add new aircraft', err: '' });
-};
+    Aircraft.findByIdAndUpdate({}, (err, aircrafts) => {
+        res.render('aircrafts/index', { title: 'Add new aircraft', aircrafts });
+
+    })
+}
+function addToAircrafts(req, res) {
+    Schedule.findById(req.params.id, function(err, schedule) {
+      schedule.aircrafts.push(req.body.aircraft)
+      schedule.save(function(err) {
+        res.redirect(`/schedules/${schedule._id}`)
+      })
+    })
+  }
 function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key]
@@ -36,10 +48,7 @@ function deleteAircraft(req, res) {
 }
 function show(req, res) {
     Aircraft.findById(req.params.id)
-        .then((aircraft) => {
-            // .populate('schedules').exec((err, aircraft) => {
-            //   Schedule.find({_id: {$nin: aircraft.schedules}}, (err, schedules) => {
-            //       console.log(aircraft, 'aircraft console')
+        .then(() => {
             res.render('aircrafts/show', { title: 'Aircraft Detail', aircraft })
         })
 }

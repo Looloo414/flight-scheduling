@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <section id="show-page">
+        <div>Date: </div>
+        <div><%= schedule.date %></div>
+        <div>Instructor: </div>
+        <div><%= schedule.instructor %></div>
+        <div>Student: </div>
+        <div> <img height="50" src="<%= schedule.addedBy %>"></div>
+        <div><%= schedule.addedBy %></div>
+      <!-- start destination list -->
+      <div>Aircraft:</div>
+      <ul>
+        <%- schedule.aircraft.map(d =>
+          `<li>${a.aircraft}</li>`
+        ).join('') %>
+      </ul>
+      <!-- end destination list -->
+    </section>
+    <!-- add to destination form below this comment -->
+    <form id="add-loc-to-destination" action="/schedules/<%= schedule._id %>/aircrafts" method="POST">
+      <select name="aircrafts">
+        <%- aircrafts.map(a =>
+          `<option value="${a._id}">${a.aircraft}</option>`
+        ).join('') %>
+      </select>
+      <button type="submit">Add to Aircraft</button>
+    </form>
+      </section>
 </body>
 </html>

@@ -37,7 +37,10 @@ function deleteSchedule(req, res) {
 }
 function show(req, res) {
     Schedule.findById(req.params.id)
-        .then((schedule) => {
-            res.render('schedules/show', {schedule})
+        .populate('aircrafts').exec((err, schedule) => {
+            Aircraft.find({ _id: { $nin: schedule.aircraft } }, (err, aircrafts) => {
+                res.render('schedules/show', { schedule, aircrafts })
+            })
         })
+
 }
