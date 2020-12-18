@@ -1,15 +1,11 @@
-# MEN Stack with OAuth Template
+☐ App Title: Contains a description of what the app does and optional background info.
 
-This is a MEN Stack template that includes OAuth.
+☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
 
-Use this to go build things! 🚀
+☐ Technologies Used: List of technologies used.
 
-Add a .env file with the following:
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CALLBACK=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+☐ Getting Started: Include a link to the deployed app and your Trello board with the project's planning.
+
+☐ Next Steps: The future enhancements you plan to make to your app (icebox items).
 ```
 # flight-scheduling

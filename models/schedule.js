@@ -7,8 +7,8 @@ const scheduledFlightSchema = new Schema(
   {
     date: Date,
     instructor: {type: String, enum:['Alexa', 'Chris', 'Steve', 'Brian']},
-    user: [{type: Schema.Types.ObjectId,
-        ref: 'User'}],
+    addedBy: String,
+    avatar: String,
     aircraft: [{type: Schema.Types.ObjectId,
         ref: 'Aircraft'}]
   },

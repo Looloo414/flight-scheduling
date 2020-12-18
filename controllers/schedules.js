@@ -16,12 +16,14 @@ function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key]
     }
+    req.body.addedBy = req.user.name
+    req.body.avatar = req.user.avatar
     const schedule = new Schedule(req.body)
     schedule.save(function (err, schedule) {
         res.redirect('/schedules')
     })
+}
 
-};
 function index(req, res) {
     Schedule.find({}, function (err, schedules) {
         res.render('schedules/index', { schedules })
