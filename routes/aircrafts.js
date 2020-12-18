@@ -6,6 +6,7 @@ router.get('/new', aircraftsCtrl.new);
 router.post('/', aircraftsCtrl.create);
 router.get('/', aircraftsCtrl.index);
 router.delete('/:id', aircraftsCtrl.delete)
+router.get('/:id', aircraftsCtrl.show)
 
 
 // function isLoggedIn(req, res, next) {

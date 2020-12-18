@@ -17,14 +17,20 @@
                 <%= a.name %>
                 <%= a.multiEngine %>
     </a>
-
-        <form action="/aircrafts/<%= a._id %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
-        </form>
-        </div>
-        </div><br>
-        <% }) %>
-
+    <form action="/aircrafts/<%= a._id %>?_method=DELETE" method="POST">
+        <button type="submit">X</button>
+    </form>
+    </div>
+    </div><br>
+    <% }) %>
+    <form action="/aircrafts" method="POST">
+        <input type="text" name="name" placeholder="Name of Aircraft">
+        </br>
+        </br>
+        <label>Multi Engine ?:</label>
+        <input type="checkbox" name="multiEngine">
+        <button type="submit">Add Aircraft</button>
+    </form>
 
 </body>
 
