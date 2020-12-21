@@ -10,7 +10,7 @@ module.exports = {
     show
 }
 function newSchedule(req, res) {
-    res.render('schedules/new', { title: "New Schedule", user: req.user, aircraft, schedule });
+    res.render('schedules/new', { title: "New Schedule", user: req.user });
 };
 function create(req, res) {
     for (let key in req.body) {
@@ -25,9 +25,9 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    Aircraft.find({}, function(err, aircrafts) {
+    Aircraft.find({}, function (err, aircraft) {
         Schedule.find({}, function (err, schedules) {
-            res.render('schedules/index', { title: "All Schedules", user: req.user, aircrafts, schedules })
+            res.render('schedules/index', { title: "All Schedules", user: req.user, aircraft, schedules })
         })
     })
 }
@@ -40,8 +40,8 @@ function deleteSchedule(req, res) {
 function show(req, res) {
     Schedule.findById(req.params.id)
         .populate('aircraft').exec((err, schedule) => {
-            Aircraft.find({ _id: { $nin: schedule.aircraft } }, (err, aircrafts) => {
-                res.render('schedules/show', { title: "Schedule", user: req.user, schedule, aircrafts })
+            Aircraft.find({ _id: { $nin: schedule.aircraft } }, (err, aircraft) => {
+                res.render('schedules/show', { title: "Schedule", user: req.user, schedule, aircraft })
             })
         })
 

@@ -19,7 +19,7 @@
 <!-- add to aircraft form below this comment -->
 <form id="add-loc-to-destination" action="/schedules/<%= schedule._id %>/aircrafts" method="POST">
     <select name="aircrafts">
-        <%- aircrafts.map(a =>
+        <%- aircraft.map(a =>
           `<option value="${a._id}">${a.aircraft}</option>`
         ).join('') %>
     </select>

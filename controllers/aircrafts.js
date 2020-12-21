@@ -48,8 +48,8 @@ function deleteAircraft(req, res) {
 }
 function show(req, res) {
     Aircraft.findById(req.params.id)
-        .then(() => {
-            res.render('aircrafts/show', { title: 'Aircraft Detail', user: req.user, aircraft: aircraft })
+        .then((aircraft) => {
+            res.render('aircrafts/show', { title: 'Aircraft Detail', user: req.user, aircraft })
         })
 }
 
