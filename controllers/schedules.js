@@ -1,6 +1,6 @@
 const Aircraft = require('../models/aircraft');
 const Schedule = require('../models/schedule');
-const User = require('../models/schedule')
+
 
 module.exports = {
     new: newSchedule,
@@ -10,7 +10,7 @@ module.exports = {
     show
 }
 function newSchedule(req, res) {
-    res.render('schedules/new');
+    res.render('schedules/new', { title: "New Schedule", user: req.user, aircraft, schedule });
 };
 function create(req, res) {
     for (let key in req.body) {
@@ -25,8 +25,10 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    Schedule.find({}, function (err, schedules) {
-        res.render('schedules/index', { schedules })
+    Aircraft.find({}, function(err, aircrafts) {
+        Schedule.find({}, function (err, schedules) {
+            res.render('schedules/index', { title: "All Schedules", user: req.user, aircrafts, schedules })
+        })
     })
 }
 function deleteSchedule(req, res) {
@@ -37,9 +39,9 @@ function deleteSchedule(req, res) {
 }
 function show(req, res) {
     Schedule.findById(req.params.id)
-        .populate('aircrafts').exec((err, schedule) => {
+        .populate('aircraft').exec((err, schedule) => {
             Aircraft.find({ _id: { $nin: schedule.aircraft } }, (err, aircrafts) => {
-                res.render('schedules/show', { schedule, aircrafts })
+                res.render('schedules/show', { title: "Schedule", user: req.user, schedule, aircrafts })
             })
         })
 

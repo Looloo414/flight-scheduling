@@ -1,37 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../partials/header') %>
+<h3>List of Aircrafts</h3>
+<% aircrafts.forEach(a => { %>
+<a class="links" href="/aircrafts/<%= a._id %>">
+    <div class="card">
+        <div class="card-body">
+            <img height="50" src="<%= a.avatar ? a.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="">
+            <%= a.name %>
+            <%= a.multiEngine %>
+</a>
+<form action="/aircrafts/<%= a._id %>?_method=DELETE" method="POST">
+    <button class="button" type="submit">X</button>
+</form>
+</div>
+</div><br>
+<% }) %>
+<form action="/aircrafts" method="POST">
+    <input type="text" name="name" placeholder="Name of Aircraft">
+    </br>
+    </br>
+    <label>Multi Engine ?:</label>
+    <input type="checkbox" name="multiEngine">
+    <button class="button" type="submit">Add Aircraft</button>
+</form>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h3>List of Aircrafts</h3>
-    <% aircrafts.forEach(a => { %>
-    <a href="/aircrafts/<%= a._id %>">
-        <div class="card">
-            <div class="card-body">
-                <img height="50" src="<%= a.avatar ? a.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="">
-                <%= a.name %>
-                <%= a.multiEngine %>
-    </a>
-    <form action="/aircrafts/<%= a._id %>?_method=DELETE" method="POST">
-        <button type="submit">X</button>
-    </form>
-    </div>
-    </div><br>
-    <% }) %>
-    <form action="/aircrafts" method="POST">
-        <input type="text" name="name" placeholder="Name of Aircraft">
-        </br>
-        </br>
-        <label>Multi Engine ?:</label>
-        <input type="checkbox" name="multiEngine">
-        <button type="submit">Add Aircraft</button>
-    </form>
-
-</body>
-
-</html>
+<%- include('../partials/footer') %>

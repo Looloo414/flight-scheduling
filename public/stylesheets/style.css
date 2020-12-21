@@ -1,9 +1,67 @@
-body {
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+.body {
+  font-family: 'Raleway', sans-serif;
   background-color: gray;
   margin: 0;
 }
 
-nav {
-  background-color: white;
+.nav {
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(209, 113, 28);
+  text-align: right;
+  color: white;
+  text-decoration: none;
+
+}
+
+.nav-link {
+  font-family: 'Raleway', sans-serif;
+  display: inline;
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 10px;
+  margin-bottom: 15px;
+
+}
+
+.collapse-navbar-collapse {
+  display: inline;
+  list-style-type: none;
+}
+#avatarPhoto {
+  border-radius: 50%;
+  display: inline;
+  margin-top: 10px;
+
+}
+
+#brez-title {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.links {
+  color: white;
+  
+}
+
+.button {
+  background-color: black;
+  color: white;
+  border-color:  rgb(209, 113, 28);
+  border-radius: 15%;
+
+}
+
+.page-links {
+  color: white;
+}
+
+.schedule-head {
+  margin: 0 10px 10px 0;
+  padding: 10px;
+}
+
+.schedule-avatar {
+  border-radius: 50%;
 }

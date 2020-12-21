@@ -12,13 +12,13 @@ module.exports = {
 }
 function newAircraft(req, res) {
     Aircraft.findByIdAndUpdate({}, (err, aircrafts) => {
-        res.render('aircrafts/index', { title: 'Add new aircraft', aircrafts });
+        res.render('aircrafts/index', { title: 'Add new aircraft', user: req.user, aircraft: aircraft });
 
     })
 }
 function addToAircrafts(req, res) {
     Schedule.findById(req.params.id, function(err, schedule) {
-      schedule.aircrafts.push(req.body.aircraft)
+      schedule.aircraft=req.body.aircraft
       schedule.save(function(err) {
         res.redirect(`/schedules/${schedule._id}`)
       })
@@ -37,7 +37,7 @@ function create(req, res) {
 };
 function index(req, res) {
     Aircraft.find({}, function (err, aircrafts) {
-        res.render('aircrafts/index', { title: "All Aircrafts", aircrafts: aircrafts })
+        res.render('aircrafts/index', { title: "All Aircrafts", user: req.user, aircrafts: aircrafts })
     })
 }
 function deleteAircraft(req, res) {
@@ -49,7 +49,7 @@ function deleteAircraft(req, res) {
 function show(req, res) {
     Aircraft.findById(req.params.id)
         .then(() => {
-            res.render('aircrafts/show', { title: 'Aircraft Detail', aircraft })
+            res.render('aircrafts/show', { title: 'Aircraft Detail', user: req.user, aircraft: aircraft })
         })
 }
 

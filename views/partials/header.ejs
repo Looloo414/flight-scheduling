@@ -5,33 +5,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <title><%= title %></title>
 </head>
 
-<body>
-  <nav>
-    <a class="navbar-brand" href="/">Brez Aerospace</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
+<body class="body">
+  <nav class="nav">
+    <a class="nav-link" id="brez-title" href="/">Brez Aerospace</a>
+    <div class="collapse-navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <% if (user) { %>
-        <li class="nav-item">
+        <li class="nav-link">
           <a class="nav-link" href="/aircrafts">Aircrafts</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-link">
           <a class="nav-link" href="/users">Users</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-link">
           <a class="nav-link" href="/schedules">Scheduled Flights</a>
         </li>
         <ul>
-          <li>
-            <a href="/auth/logout">Log Out</a>
-          <li class="nav-item">
+          <li class="nav-link">
+            <a class="nav-link" href="/auth/logout">Log Out</a>
+          <li class="nav-link" id="nav-avatar">
             <img id="avatarPhoto" height="50" src="<%= user.avatar %>" alt="" />
           </li>
           </li>
           <% } else { %>
-          <li>
+          <li class="nav-link">
             <a href="/auth/google">Login with Google</a>
           </li>
           <% } %>

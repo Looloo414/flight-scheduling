@@ -1,35 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../partials/header') %>
+<h2>Aircraft</h2>
+</br>
+<section>
+    <img height="75" src="<%= aircraft.avatar ? aircraft.avatar : 'http://theoldreader.com/kittens/300/300/' %>">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h2>Aircraft</h2>
+    <div>Name of Aircraft:</div>
+    <div><%= aircraft.name %></div>
     </br>
-    <section>
-        <img height="75" src="<%= aircraft.avatar ? aircraft.avatar : 'http://theoldreader.com/kittens/300/300/' %>">
-
-        <div>Name of Aircraft:</div>
-        <div><%= aircraft.name %></div>
+    <div>Multi Engine ?:</div>
+    <div><%= aircraft.multiEngine %></div>
+    <form action="/aircrafts/<%= aircraft._id%>?_method=PUT" method="POST">
         </br>
-        <div>Multi Engine ?:</div>
-        <div><%= aircraft.multiEngine %></div>
-        <form action="/aircrafts/<%= aircraft._id%>?_method=PUT" method="POST">
-            </br>
-            <Label>Edit Name of Aircraft:</Label>
-            <input type="text" name="name" value="<%= aircraft.name  %> ">
-            <label>Multi Engine ?:</label>
-            <input type="checkbox" name='multiEngine'
-                <%= aircraft.multiEngine === "on"? 'Multi Engine' : 'Single Engine' %>>
-            <button type='submit'>Update</button>
-        </form>
-    </section>
-    </br>
-    <a href="schedules/new" role="button">Schedule this Plane</a>
-</body>
-
-</html>
+        <Label>Edit Name of Aircraft:</Label>
+        <input type="text" name="name" value="<%= aircraft.name  %> ">
+        <label>Multi Engine ?:</label>
+        <input type="checkbox" name='multiEngine'
+            <%= aircraft.multiEngine === "on"? 'Multi Engine' : 'Single Engine' %>>
+        <button class="button" type='submit'>Update</button>
+    </form>
+</section>
+</br>
+<a href="schedules/new" role="button">Schedule this Plane</a>
+<%- include('../partials/footer') %>
