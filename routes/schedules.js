@@ -8,6 +8,7 @@ router.get('/', isLoggedIn, schedulesCtrl.index);
 router.post('/', isLoggedIn, schedulesCtrl.create);
 router.delete('/:id', isLoggedIn, schedulesCtrl.delete);
 router.get('/:id', isLoggedIn, schedulesCtrl.show);
+router.put("/:id", isLoggedIn, schedulesCtrl.addAircraft)
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

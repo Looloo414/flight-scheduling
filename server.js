@@ -20,8 +20,8 @@ require("./config/passport");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
-var schedulesRouter = require('./routes/schedules');
-var aircraftsRouter = require('./routes/aircrafts');
+const schedulesRouter = require('./routes/schedules');
+const aircraftsRouter = require('./routes/aircrafts');
 
 const app = express();
 

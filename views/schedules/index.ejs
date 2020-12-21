@@ -19,7 +19,7 @@
             <td><%= s.aircraft %> </td>
             <td><a class="page-links" href="/schedules/<%= s._id %>">Details</a></td>
             <td>
-                <form action="schedules/<%= s._id %>?_method=DELETE" method="POST">
+                <form action="/schedules/<%= s._id %>?_method=DELETE" method="POST">
                     <button class="button"  type="submit">X</button>
                 </form>
             </td>

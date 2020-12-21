@@ -7,7 +7,8 @@ module.exports = {
     create,
     index,
     delete: deleteSchedule,
-    show
+    show,
+    addAircraft
 }
 function newSchedule(req, res) {
     res.render('schedules/new', { title: "New Schedule", user: req.user });
@@ -40,9 +41,18 @@ function deleteSchedule(req, res) {
 function show(req, res) {
     Schedule.findById(req.params.id)
         .populate('aircraft').exec((err, schedule) => {
+            console.log(schedule, "schedule")
             Aircraft.find({ _id: { $nin: schedule.aircraft } }, (err, aircraft) => {
                 res.render('schedules/show', { title: "Schedule", user: req.user, schedule, aircraft })
             })
         })
 
+}
+
+function addAircraft(req, res) {
+    Schedule.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then((schedule) => {
+            res.redirect(`/schedules/${schedule._id}`)
+
+        })
 }
