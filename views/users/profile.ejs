@@ -1,21 +1,29 @@
 <%- include('../partials/header') %>
-<h3 class="title"><%= title %></h3>
+    <h3 class="title">
+        <%= title %>
+    </h3>
 
 
-<div class="card-body" id="show-page">
-    <img height="100" id="avatarPhoto" src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>">
-    <h3 class="card-text">Name: <%= user.name %></h3>
-    <p class="card-text">Email: <%= user.email %></p>
-    <p class="card-text">Hours: <%= user.hours %></p>
-    <p class="card-text">Licenses/Ratings: 
-        <% user.licensesRatings.forEach((licenseRatings) => { %>
-            <p><%= licenseRatings%></p>
-            <% }) %> 
-            
-        </div>
+    <div class="card-body" id="show-page">
+        <img height="100" id="avatarPhoto"
+            src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>">
+        <h3 class="card-text">Name: <%= user.name %>
+        </h3>
+        <p class="card-text">Email: <%= user.email %>
+        </p>
+        <p class="card-text">Hours: <%= user.hours %>
+        </p>
+        <p class="card-text">Licenses/Ratings:
+            <% user.licensesRatings.forEach((licenseRatings)=> { %>
+                <p>
+                    <%= licenseRatings%>
+                </p>
+                <% }) %>
+
+    </div>
     </br></br>
-        <div class="edit-user">
-            <a class="nav-link" href="/users/<%= user._id %>/edit">Update
-                Info</a>
-        </div>
-<%- include('../partials/footer') %>
+    <div class="edit-user">
+        <a class="nav-link" href="/users/<%= user._id %>/edit">Update
+            Info</a>
+    </div>
+    <%- include('../partials/footer') %>

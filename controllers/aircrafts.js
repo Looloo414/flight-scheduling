@@ -1,5 +1,4 @@
 const Aircraft = require('../models/aircraft');
-// const Schedule = require('../models/Schedule');
 
 module.exports = {
     new: newAircraft,
@@ -17,13 +16,13 @@ function newAircraft(req, res) {
     })
 }
 function addToAircrafts(req, res) {
-    Schedule.findById(req.params.id, function(err, schedule) {
-      schedule.aircraft=req.body.aircraft
-      schedule.save(function(err) {
-        res.redirect(`/schedules/${schedule._id}`)
-      })
+    Schedule.findById(req.params.id, function (err, schedule) {
+        schedule.aircraft = req.body.aircraft
+        schedule.save(function (err) {
+            res.redirect(`/schedules/${schedule._id}`)
+        })
     })
-  }
+}
 function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key]
@@ -55,9 +54,8 @@ function show(req, res) {
 
 function update(req, res) {
     req.body.multiEngine = req.body.multiEngine === "on" ? true : false
-    Aircraft.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    .then(() => {
-        res.redirect('/aircrafts')
-    })
+    Aircraft.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then(() => {
+            res.redirect('/aircrafts')
+        })
 }
-  

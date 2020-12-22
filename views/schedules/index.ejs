@@ -1,34 +1,38 @@
 <%- include('../partials/header') %>
-<H3 class="title">Schedules</H3>
-<table class="schedule-list" id="list">
-    <thead>
-        <tr class="schedule-head">
-            <th>Date/Time:</th>
-            <th>Instructor:</th>
-            <th>Student:</th>
-            <th>Aircraft:</th>
-        </tr>
-    </thead>
-    <tbody class="schedule-list">
-        <% schedules.forEach((s) => { %>
-        <tr>
-            <td><%= s.date %> </td>
-            <td><%= s.instructor %> </td>
-            <td> <img height="50" src="<%= s.avatar %>" alt=""></td>
-            <td><%= s.addedBy %> </td>
-            <td><%= s.aircraft %> </td>
-            <td><a class="page-links" href="/schedules/<%= s._id %>">Details</a></td>
-            <td>
-                <form action="/schedules/<%= s._id %>?_method=DELETE" method="POST">
-                    <button class="button"  type="submit">X</button>
-                </form>
-            </td>
-        </tr>
-        <% }) %>
-    </tbody>
-</table>
-</br>
-</br>
-<a class="nav-link" id="newSchedule" href="/schedules/new">New Schedule</a>
+    <H3 class="title">Schedules</H3>
+    <table class="schedule-list" id="list">
+        <thead>
+            <tr class="schedule-head">
+                <th>Date/Time:</th>
+                <th>Instructor:</th>
+                <th>Student:</th>
+            </tr>
+        </thead>
+        <tbody class="schedule-list">
+            <% schedules.forEach((s)=> { %>
+                <tr>
+                    <td>
+                        <%= s.date %>
+                    </td>
+                    <td>
+                        <%= s.instructor %>
+                    </td>
+                    <td> <img height="50" src="<%= s.avatar %>" alt=""></td>
+                    <td>
+                        <%= s.addedBy %>
+                    </td>
+                    <td><a class="page-links" href="/schedules/<%= s._id %>">Details</a></td>
+                    <td>
+                        <form action="/schedules/<%= s._id %>?_method=DELETE" method="POST">
+                            <button class="button" type="submit">X</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    </br>
+    </br>
+    <a class="nav-link" id="newSchedule" href="/schedules/new">New Schedule</a>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
