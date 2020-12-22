@@ -126,7 +126,8 @@
 }
 
 .main-image {
-  align-items: center;
+  display:inline-table;
+  
 }
 
 /* Gallery */
