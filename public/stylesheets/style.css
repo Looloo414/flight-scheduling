@@ -125,6 +125,10 @@
   text-align: center;
 }
 
+.main-image {
+  align-items: center;
+}
+
 /* Gallery */
 
 .gallery {
@@ -141,5 +145,5 @@
 .gallery img:hover {
   filter: grayscale(100%);
   transform:scale(1.1);
-  
+
 }
