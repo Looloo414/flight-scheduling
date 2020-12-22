@@ -12,7 +12,9 @@
   text-decoration: none;
 
 }
-
+.title{
+  text-decoration: underline;
+}
 .nav-link {
   font-family: 'Raleway', sans-serif;
   display: inline;
@@ -22,6 +24,10 @@
   padding: 10px;
   margin-bottom: 15px;
 
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 .collapse-navbar-collapse {
