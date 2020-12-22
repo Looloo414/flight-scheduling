@@ -38,9 +38,10 @@ My biggest challenges were letting go of features that were above and beyond wha
 * MongoDB
 * Azure
 * LucidChart
-* Google
+* Google OAuth 2.0
 * Heroku
 * [GitHub](https://github.com/Looloo414/flight-scheduling)
+* Visual Studio and a lot of previous lessons
 
 
 
