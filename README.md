@@ -3,18 +3,23 @@
 ### Getting Started:
 
 [Brez Aerospace!](https://scheduled-flights.herokuapp.com/)
+
 [Trello](https://trello.com/b/pBsZubW9/flight-schedule)
 
 This app is a sight for a flight school to allow students and instructors to add, update and delete flights for flight training. They can view the different aircrafts that are available and can select the instructor and the plane they will be using. They can input and update their profile with the latest hours, licenses and ratings they have achieved as well. 
 
 ### Screenshots of deployed app:
-![Picture]()
+#### Main Page:
+![Picture](public/stylesheets/images/MainPage.png)
+
+#### Aircrafts Page:
+![Picture](public/stylesheets/images/Planes.png)
 
 ### ERD: 
-![Picture](public/images/ERD.png)
+![Picture](public/stylesheets/images/ERD.png)
 
 ### Wireframe:
-![Picture](public/images/Wireframe.png)
+![Picture](public/stylesheets/images/Wireframe.png)
 
 
 ### Biggest Challenges
