@@ -1,26 +1,45 @@
 <%- include('../partials/header') %>
-<h3>List of Aircrafts</h3>
-<% aircrafts.forEach(a => { %>
-<a class="links" href="/aircrafts/<%= a._id %>">
-    <div class="card">
-        <div class="card-body">
-            <img height="50" src="<%= a.avatar ? a.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt="">
-            <%= a.name %>
-            <%= a.multiEngine %>
-</a>
-<form action="/aircrafts/<%= a._id %>?_method=DELETE" method="POST">
-    <button class="button" type="submit">X</button>
-</form>
-</div>
-</div><br>
-<% }) %>
-<form action="/aircrafts" method="POST">
-    <input type="text" name="name" placeholder="Name of Aircraft">
-    </br>
-    </br>
-    <label>Multi Engine ?:</label>
-    <input type="checkbox" name="multiEngine">
-    <button class="button" type="submit">Add Aircraft</button>
-</form>
+    <h3 class="title">List of Aircrafts</h3>
 
-<%- include('../partials/footer') %>
+    <% aircrafts.forEach(a=> { %>
+        <a class="nav-link" href="/aircrafts/<%= a._id %>">
+            </br>
+            <div class="card">
+                <div class="card">
+                    <img height="50" src="<%= a.avatar ? a.avatar : 'http://theoldreader.com/kittens/300/300/' %>"
+                        alt="">
+                    </br>
+                   <label>Type of Plane:</label> <%= a.name %>
+                </br>
+            </br>
+                   <label>Multi Engine ?:</label>
+                        <%= a.multiEngine %>
+        </a>
+        </br>
+        </br>
+        <form action="/aircrafts/<%= a._id %>?_method=DELETE" method="POST">
+            <button class="button" type="submit">X</button>
+        </form>
+        </div>
+        </div>
+        </br>
+        <% }) %>
+            </br>
+            </br>
+            <div class="add-aircraft">
+                <form action="/aircrafts" method="POST">
+                    <label>Add Aircrafts Below:</label>
+                    </br>
+                    </br>
+                    <input type="text" name="name" placeholder="Name of Aircraft">
+                    </br>
+                    </br>
+                    <label>Multi Engine ?:</label>
+                    <input type="checkbox" name="multiEngine">
+                    </br>
+                    </br>
+                    <button class="button" type="submit">Add Aircraft</button>
+                </form>
+            </div>
+
+            <%- include('../partials/footer') %>

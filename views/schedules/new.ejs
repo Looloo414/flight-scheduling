@@ -1,18 +1,21 @@
 <%- include('../partials/header') %>
-<h1>New Schedule</h1>
-<form id="new-form" action="/schedules" method="POST">
-    <label>Instructor:</label>
-    <select name="instructor">
-        <option value="Alexa">Alexa</option>
-        <option value="Chris">Chris</option>
-        <option value="Steve">Steve</option>
-        <option value="Brian">Brian</option>
-    </select>
-    </br>
-    <label>Flight Time</label>
-    <input type="datetime-local" name="date" />
+    <h2 class="title">New Schedule</h2>
+    <div class="new-schedule">
 
+        <form id="new-form" action="/schedules" method="POST">
+            <label>Instructor:</label>
+            <select name="instructor">
+                <option value="Alexa">Alexa</option>
+                <option value="Chris">Chris</option>
+                <option value="Steve">Steve</option>
+                <option value="Brian">Brian</option>
+            </select>
+            </br> </br>
+            <label>Flight Time:</label>
+            <input type="datetime-local" name="date" />
 
-    <input class="button" type="submit" value="Add Schedule">
-</form>
-<%- include('../partials/footer') %>
+        </br></br>
+            <input class="button" type="submit" value="Add Schedule">
+        </form>
+    </div>
+    <%- include('../partials/footer') %>

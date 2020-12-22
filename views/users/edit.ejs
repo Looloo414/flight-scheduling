@@ -1,12 +1,18 @@
 <%- include('../partials/header') %>
-<h2>Edit Info</h2>
+    <h2 class="title">Edit Info</h2>
+    <div class="edit-user">
+        <img height="100" id="avatarPhoto"
+            src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/' %>">
+        </br></br>
+        <form action="/users/<%= user._id%>?_method=PUT" method="POST">
+            <input type="text" name="licensesRatings" placeholder="Add a Licence or Rating">
+            </br></br>
+            <input type="number" name="hours" placeholder="Update Hours">
+            </br></br>
+            <button class="button" id="editUser" type="submit">Update</button>
+        </form>
+    </div>
 
-<form action="/users/<%= user._id%>?_method=PUT" method="POST">
-    <input type="text" name="licensesRatings" placeholder="Add Licence">
-    <input type="number" name="hours" placeholder="Update Hours">
-    <button class="button" type="submit">Update</button>
-</form>
 
 
-
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

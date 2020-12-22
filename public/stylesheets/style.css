@@ -2,6 +2,7 @@
   font-family: 'Raleway', sans-serif;
   background-color: rgb(165, 161, 161);
   margin: 0;
+  font-size: large;
 }
 
 .nav {
@@ -13,6 +14,7 @@
 
 }
 .title{
+  text-align: center;
   text-decoration: underline;
 }
 .nav-link {
@@ -28,6 +30,7 @@
 
 .nav-link:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .collapse-navbar-collapse {
@@ -64,7 +67,8 @@
 }
 
 .schedule-head {
-  margin: 0 10px 10px 0;
+  text-decoration: underline;
+  
   padding: 10px;
 }
 
@@ -72,3 +76,50 @@
   border-radius: 50%;
 }
 
+#show-page {
+  text-align: center;
+  text-decoration: none;
+}
+
+#add-aircraft {
+  text-align: center;
+}
+
+#schedulePlane {
+  text-align: center;
+}
+
+#EditPlane {
+  font-weight:bolder;
+  text-decoration: underline;
+}
+
+.add-aircraft {
+  text-align:center;
+}
+
+.index-page {
+  text-align: center;
+}
+
+.card {
+  text-align: center;
+}
+
+.edit-user {
+  text-align: center;
+}
+
+#newSchedule {
+  text-align: center;
+}
+.new-schedule {
+  text-align: center;
+}
+
+.schedule-list {
+  text-align: center;
+}
+.imgur-embed-pub{
+  text-align: center;
+}

@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
-<H3>Schedules</H3>
-<table id="list">
+<H3 class="title">Schedules</H3>
+<table class="schedule-list" id="list">
     <thead>
         <tr class="schedule-head">
-            <th>Date:</th>
+            <th>Date/Time:</th>
             <th>Instructor:</th>
             <th>Student:</th>
-            <th>Aircraft</th>
+            <th>Aircraft:</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="schedule-list">
         <% schedules.forEach((s) => { %>
         <tr>
             <td><%= s.date %> </td>
@@ -29,6 +29,6 @@
 </table>
 </br>
 </br>
-<a class="page-links" href="/schedules/new">New Schedule</a>
+<a class="nav-link" id="newSchedule" href="/schedules/new">New Schedule</a>
 
 <%- include('../partials/footer') %>

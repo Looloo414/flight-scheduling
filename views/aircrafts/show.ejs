@@ -1,24 +1,39 @@
 <%- include('../partials/header') %>
-<h2>Aircraft</h2>
-</br>
-<section>
-    <img height="75" src="<%= aircraft.avatar ? aircraft.avatar : 'http://theoldreader.com/kittens/300/300/' %>">
-
-    <div>Name of Aircraft:</div>
-    <div><%= aircraft.name %></div>
+    <h2 class="title">Aircraft</h2>
     </br>
-    <div>Multi Engine ?:</div>
-    <div><%= aircraft.multiEngine %></div>
-    <form action="/aircrafts/<%= aircraft._id%>?_method=PUT" method="POST">
+    <section id="show-page">
+        <img height="75" src="<%= aircraft.avatar ? aircraft.avatar : 'http://theoldreader.com/kittens/300/300/' %>">
         </br>
-        <Label>Edit Name of Aircraft:</Label>
-        <input type="text" name="name" value="<%= aircraft.name  %> ">
-        <label>Multi Engine ?:</label>
-        <input type="checkbox" name='multiEngine'
-            <%= aircraft.multiEngine === "on"? '-Multi Engine' : '-Single Engine' %>>
-        <button class="button" type='submit'>Update</button>
-    </form>
-</section>
-</br>
-<a class="nav-link" href="/schedules/new" role="button">Schedule this Plane</a>
-<%- include('../partials/footer') %>
+
+        <div>Name of Aircraft:</div>
+        <div>
+            <%= aircraft.name %>
+        </div>
+        </br>
+        <div>Multi Engine ?:</div>
+        <div>
+            <%= aircraft.multiEngine %>
+        </div>
+        <form action="/aircrafts/<%= aircraft._id%>?_method=PUT" method="POST">
+            </br>
+            </br>
+            </br>
+            <label id="EditPlane">Edit Current Plane</label>
+            </br>
+            </br>
+            <Label>Type of Plane:</Label>
+            </br>
+            <input type="text" name="name" value="<%= aircraft.name  %> ">
+            </br>
+            </br>
+            <label>Multi Engine ?:</label>
+            <input type="checkbox" name='multiEngine' <%=aircraft.multiEngine==="on" ? '-Multi Engine'
+                : '-Single Engine' %>>
+            </br>
+            </br>
+            <button class="button" type='submit'>Update</button>
+        </form>
+    </section>
+    </br>
+    <a class="nav-link" id="schedulePlane" href="/schedules/new" role="button">Schedule this Plane</a>
+    <%- include('../partials/footer') %>
