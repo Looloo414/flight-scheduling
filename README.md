@@ -10,7 +10,7 @@ This app is a sight for a flight school to allow students and instructors to add
 
 ### Screenshots of deployed app:
 #### Main Page:
-![Picture](public/stylesheets/images/MainPage.png)
+![Picture](public/stylesheets/images/brezAeroTwo.png)
 
 #### Aircrafts Page:
 ![Picture](public/stylesheets/images/Planes.png)
